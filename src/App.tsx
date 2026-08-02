@@ -1,18 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { HomePage } from './pages/HomePage';
-import { ServicesPage } from './pages/ServicesPage';
-import { PricingPage } from './pages/PricingPage';
-import { AboutPage } from './pages/AboutPage';
-import { ContactPage } from './pages/ContactPage';
 import { AiProposalModal } from './components/AiProposalModal';
 import { AiChatAssistant } from './components/AiChatAssistant';
 import { MobileBackground } from './components/MobileBackground';
 import { BackgroundAtmosphere } from './components/BackgroundAtmosphere';
+import { Sparkles } from 'lucide-react';
+
+// Lazy loaded page components for optimal initial bundle loading performance
+const HomePage = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })));
+const ServicesPage = lazy(() => import('./pages/ServicesPage').then(m => ({ default: m.ServicesPage })));
+const PricingPage = lazy(() => import('./pages/PricingPage').then(m => ({ default: m.PricingPage })));
+const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
+const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage').then(m => ({ default: m.PrivacyPolicyPage })));
+const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage').then(m => ({ default: m.TermsOfServicePage })));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
+
+// Loading Fallback Component
+const PageLoadingFallback: React.FC = () => (
+  <div className="min-h-[65vh] flex items-center justify-center p-8">
+    <div className="flex flex-col items-center gap-3">
+      <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center animate-spin">
+        <Sparkles className="w-5 h-5" />
+      </div>
+      <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Loading Drazon...</p>
+    </div>
+  </div>
+);
 
 export default function App() {
   const [proposalModalOpen, setProposalModalOpen] = useState(false);
@@ -45,16 +62,20 @@ export default function App() {
           onOpenChat={handleOpenChat}
         />
 
-        {/* Main Content Router */}
+        {/* Main Content Router with Suspense */}
         <main id="main-content" className="flex-1 pt-16 relative z-10">
-          <Routes>
-            <Route path="/" element={<HomePage onOpenProposal={handleOpenProposal} />} />
-            <Route path="/services" element={<ServicesPage onOpenProposal={handleOpenProposal} />} />
-            <Route path="/pricing" element={<PricingPage onOpenProposal={handleOpenProposal} />} />
-            <Route path="/about" element={<AboutPage onOpenProposal={handleOpenProposal} />} />
-            <Route path="/contact" element={<ContactPage onOpenProposal={handleOpenProposal} />} />
-            <Route path="*" element={<HomePage onOpenProposal={handleOpenProposal} />} />
-          </Routes>
+          <Suspense fallback={<PageLoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<HomePage onOpenProposal={handleOpenProposal} />} />
+              <Route path="/services" element={<ServicesPage onOpenProposal={handleOpenProposal} />} />
+              <Route path="/pricing" element={<PricingPage onOpenProposal={handleOpenProposal} />} />
+              <Route path="/about" element={<AboutPage onOpenProposal={handleOpenProposal} />} />
+              <Route path="/contact" element={<ContactPage onOpenProposal={handleOpenProposal} />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsOfServicePage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </Suspense>
         </main>
 
         {/* Footer */}
@@ -71,9 +92,6 @@ export default function App() {
           isOpen={chatAssistantOpen}
           onClose={() => setChatAssistantOpen(false)}
         />
-
-        {/* Vercel Speed Insights */}
-        <SpeedInsights />
       </div>
     </Router>
   );

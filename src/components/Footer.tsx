@@ -82,12 +82,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProposal }) => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} DRAZON.NET. All rights reserved.</p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-6">
+            <Link to="/privacy" className="hover:text-slate-800 transition">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-slate-800 transition">Terms of Service</Link>
             <Link to="/contact" className="hover:text-slate-800 transition">Contact Support</Link>
             
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300 transition flex items-center justify-center"
+              className="p-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300 transition flex items-center justify-center cursor-pointer"
               aria-label="Back to top"
             >
               <ArrowUp className="w-4 h-4" />

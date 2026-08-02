@@ -26,6 +26,8 @@ export const MobileBackground: React.FC = () => {
           src={ARCHITECTURAL_BW_IMAGE_PATH}
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top filter grayscale contrast-150 scale-110"
           referrerPolicy="no-referrer"
         />
@@ -35,9 +37,9 @@ export const MobileBackground: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/85" />
 
       {/* 3. DEDICATED LARGE BLURRED EMERALD & TEAL GRADIENT CIRCLES */}
-      <motion.div style={{ y: yBlobTop }} className="absolute -top-20 -right-20 w-88 h-88 rounded-full bg-gradient-to-br from-[#10B981]/35 via-[#059669]/25 to-transparent blur-[75px]" />
-      <motion.div style={{ y: yBlobMid }} className="absolute top-1/4 -left-28 w-92 h-92 rounded-full bg-gradient-to-tr from-[#06B6D4]/30 via-[#10B981]/20 to-transparent blur-[85px]" />
-      <motion.div style={{ y: yBlobBottom }} className="absolute top-1/2 -right-28 w-[380px] h-[380px] rounded-full bg-gradient-to-bl from-[#059669]/28 via-[#34D399]/18 to-transparent blur-[90px]" />
+      <motion.div style={{ y: yBlobTop, willChange: 'transform' }} className="absolute -top-20 -right-20 w-88 h-88 rounded-full bg-gradient-to-br from-[#10B981]/30 via-[#059669]/20 to-transparent blur-[50px]" />
+      <motion.div style={{ y: yBlobMid, willChange: 'transform' }} className="absolute top-1/4 -left-28 w-92 h-92 rounded-full bg-gradient-to-tr from-[#06B6D4]/25 via-[#10B981]/15 to-transparent blur-[60px]" />
+      <motion.div style={{ y: yBlobBottom, willChange: 'transform' }} className="absolute top-1/2 -right-28 w-[380px] h-[380px] rounded-full bg-gradient-to-bl from-[#059669]/22 via-[#34D399]/14 to-transparent blur-[60px]" />
 
       {/* 4. SOFT RADIAL LIGHTING FLARES */}
       <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[360px] h-[220px] bg-emerald-200/50 blur-[60px] rounded-full" />

@@ -46,13 +46,15 @@ export const BackgroundAtmosphere: React.FC = () => {
     <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0 bg-slate-50/80">
       {/* 1. Base Architectural Graphic Texture (Deepest Layer - Slowest) */}
       <motion.div
-        style={{ y: yTexture }}
+        style={{ y: yTexture, willChange: 'transform' }}
         className="absolute inset-0 opacity-[0.11] mix-blend-multiply pointer-events-none"
       >
         <img
           src={ARCHITECTURAL_BW_IMAGE_PATH}
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="w-full h-[120%] object-cover object-center filter grayscale contrast-150 scale-105"
           referrerPolicy="no-referrer"
         />
@@ -65,37 +67,37 @@ export const BackgroundAtmosphere: React.FC = () => {
       {/* 3. PARALLAX MESH GRADIENT BLOBS */}
       {/* Top Left Giant Emerald Glow Spotlight */}
       <motion.div
-        style={{ y: yBlobTopLeft }}
-        className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-[#10B981]/30 via-[#059669]/20 to-transparent blur-[120px] animate-pulse-glow"
+        style={{ y: yBlobTopLeft, willChange: 'transform' }}
+        className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#10B981]/25 via-[#059669]/15 to-transparent blur-[80px]"
       />
 
       {/* Top Right Cyan-Teal Light Flare */}
       <motion.div
-        style={{ y: yBlobTopRight }}
-        className="absolute -top-20 -right-20 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-[#06B6D4]/25 via-[#10B981]/15 to-transparent blur-[130px]"
+        style={{ y: yBlobTopRight, willChange: 'transform' }}
+        className="absolute -top-20 -right-20 w-[550px] h-[550px] rounded-full bg-gradient-to-bl from-[#06B6D4]/20 via-[#10B981]/12 to-transparent blur-[80px]"
       />
 
       {/* Center Left Flowing Mint Aura */}
       <motion.div
-        style={{ y: yBlobCenterLeft }}
-        className="absolute top-1/3 -left-48 w-[750px] h-[750px] rounded-full bg-gradient-to-r from-[#34D399]/22 via-[#10B981]/18 to-transparent blur-[140px]"
+        style={{ y: yBlobCenterLeft, willChange: 'transform' }}
+        className="absolute top-1/3 -left-48 w-[650px] h-[650px] rounded-full bg-gradient-to-r from-[#34D399]/18 via-[#10B981]/14 to-transparent blur-[90px]"
       />
 
       {/* Center Right Cyan Orbit Spot */}
       <motion.div
-        style={{ y: yBlobCenterRight }}
-        className="absolute top-1/2 -right-40 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gradient-to-l from-[#06B6D4]/22 via-[#059669]/15 to-transparent blur-[140px]"
+        style={{ y: yBlobCenterRight, willChange: 'transform' }}
+        className="absolute top-1/2 -right-40 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-l from-[#06B6D4]/18 via-[#059669]/12 to-transparent blur-[90px]"
       />
 
       {/* Bottom Left Emerald Mesh Base */}
       <motion.div
-        style={{ y: yBlobBottom }}
-        className="absolute -bottom-40 -left-32 w-[800px] h-[800px] rounded-full bg-gradient-to-tr from-[#059669]/28 via-[#10B981]/18 to-transparent blur-[150px]"
+        style={{ y: yBlobBottom, willChange: 'transform' }}
+        className="absolute -bottom-40 -left-32 w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-[#059669]/22 via-[#10B981]/14 to-transparent blur-[100px]"
       />
 
       {/* 4. SWEEPING TRANSLUCENT WAVE RIBBONS WITH PARALLAX */}
       <motion.div
-        style={{ y: yWaves, rotate: rotateWaves }}
+        style={{ y: yWaves, rotate: rotateWaves, willChange: 'transform' }}
         className="absolute inset-0 w-full h-[120%]"
       >
         <AbstractFlowingWaves className="w-full h-full opacity-100" />
