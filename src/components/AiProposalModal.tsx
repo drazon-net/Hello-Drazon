@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { X, Sparkles, Loader2, CheckCircle2, ArrowRight, Check, Copy } from 'lucide-react';
 import { AiProposal } from '../types';
 import { DrazonLogo } from './DrazonLogo';
@@ -10,6 +11,7 @@ interface AiProposalModalProps {
 }
 
 export const AiProposalModal: React.FC<AiProposalModalProps> = ({ isOpen, onClose, defaultService }) => {
+  const navigate = useNavigate();
   const [businessName, setBusinessName] = useState('');
   const [businessType, setBusinessType] = useState('Restaurant / Local Business');
   const [goals, setGoals] = useState('Attract local clients & boost online sales');
@@ -289,16 +291,7 @@ Strategy: ${proposal.growthStrategy}`;
                 type="button"
                 onClick={() => {
                   onClose();
-                  setTimeout(() => {
-                    const contactEl = document.getElementById('contact');
-                    if (contactEl) {
-                      const yOffset = -80;
-                      const y = contactEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                      window.scrollTo({ top: y, behavior: 'smooth' });
-                    } else {
-                      window.location.href = '/#contact';
-                    }
-                  }, 150);
+                  navigate('/contact');
                 }}
                 className="w-full sm:w-auto px-6 py-3 text-xs font-bold uppercase tracking-wider text-white bg-[#10B981] hover:bg-[#059669] rounded-xl shadow-md shadow-[#10B981]/25 text-center cursor-pointer transition-all duration-200"
               >

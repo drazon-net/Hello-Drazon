@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HeroSection } from '../components/HeroSection';
-import { ContactSection } from '../components/ContactSection';
 import { SERVICES_DATA, PRICING_PLANS } from '../data/agencyData';
-import { Code2, Palette, ShieldCheck, ArrowRight, Sparkles, Zap, Star, Check, Shield, Clock, Award } from 'lucide-react';
+import { Code2, Palette, ShieldCheck, ArrowRight, Sparkles, Zap, Star, Check, Shield, Clock, Award, Mail } from 'lucide-react';
 
 interface HomePageProps {
   onOpenProposal: () => void;
@@ -23,22 +22,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
     }
   };
 
-  const scrollToContact = () => {
-    const el = document.getElementById('contact');
-    if (el) {
-      const yOffset = -80;
-      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="space-y-16 pb-12">
+    <div className="space-y-16 pb-16">
       {/* 1. Hero Section */}
       <HeroSection onGetWebsite={onOpenProposal} />
 
       {/* 2. Brand Introduction Section */}
-      <section id="about" className="py-12 relative border-y border-slate-200/80 bg-white/60 backdrop-blur-md scroll-mt-20">
+      <section className="py-12 relative border-y border-slate-200/80 bg-white/60 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-12 gap-8 items-center">
             
@@ -111,7 +101,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
       </section>
 
       {/* 3. Services Overview Section */}
-      <section id="services" className="py-8 relative scroll-mt-20">
+      <section className="py-8 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-[#059669] uppercase tracking-wider">
@@ -187,18 +177,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
             >
               Explore All Services
             </Link>
-            <button
-              onClick={scrollToContact}
+            <Link
+              to="/contact"
               className="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider border border-slate-200 transition cursor-pointer"
             >
               Contact Us Directly
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 4. Pricing Overview Section (#pricing) */}
-      <section id="pricing" className="py-12 relative border-t border-slate-200/80 bg-white/40 backdrop-blur-md scroll-mt-20">
+      {/* 4. Pricing Overview Section */}
+      <section className="py-12 relative border-t border-slate-200/80 bg-white/40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-[#059669] uppercase tracking-wider">
@@ -243,20 +233,54 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
                   </ul>
                 </div>
 
-                <button
-                  onClick={scrollToContact}
-                  className="w-full py-2.5 px-4 text-xs font-bold text-white bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#10B981] rounded-xl shadow-md transition cursor-pointer"
+                <Link
+                  to="/contact"
+                  className="w-full py-2.5 px-4 text-xs font-bold text-white bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#10B981] rounded-xl shadow-md transition cursor-pointer text-center"
                 >
                   Select Plan
-                </button>
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5. Contact Section (#contact) */}
-      <ContactSection onOpenProposal={onOpenProposal} id="contact" />
+      {/* 5. Bottom Call to Action Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
+          <div className="space-y-3 text-center md:text-left max-w-xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400 uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Ready To Launch?</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tight">
+              Let's Build Your Business Website Today
+            </h2>
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Get an instant proposal generated by AI or contact our team directly for a custom scope consultation.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full md:w-auto">
+            <button
+              onClick={onOpenProposal}
+              className="w-full sm:w-auto px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-[#10B981] hover:bg-[#059669] rounded-xl shadow-lg shadow-[#10B981]/25 transition cursor-pointer flex items-center justify-center gap-2"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>Get Instant Proposal</span>
+            </button>
+
+            <Link
+              to="/contact"
+              className="w-full sm:w-auto px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-200 bg-slate-800 hover:bg-slate-700 rounded-xl border border-slate-700 transition flex items-center justify-center gap-2"
+            >
+              <Mail className="w-4 h-4 text-[#10B981]" />
+              <span>Contact Drazon</span>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
+
