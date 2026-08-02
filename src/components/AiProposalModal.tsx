@@ -285,13 +285,25 @@ Strategy: ${proposal.growthStrategy}`;
                 ← Edit Business Details
               </button>
 
-              <a
-                href="/contact"
-                onClick={onClose}
-                className="w-full sm:w-auto px-6 py-3 text-xs font-bold uppercase tracking-wider text-white bg-[#10B981] hover:bg-[#059669] rounded-xl shadow-md shadow-[#10B981]/25 text-center cursor-pointer"
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  setTimeout(() => {
+                    const contactEl = document.getElementById('contact');
+                    if (contactEl) {
+                      const yOffset = -80;
+                      const y = contactEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    } else {
+                      window.location.href = '/#contact';
+                    }
+                  }, 150);
+                }}
+                className="w-full sm:w-auto px-6 py-3 text-xs font-bold uppercase tracking-wider text-white bg-[#10B981] hover:bg-[#059669] rounded-xl shadow-md shadow-[#10B981]/25 text-center cursor-pointer transition-all duration-200"
               >
                 Proceed & Contact Drazon
-              </a>
+              </button>
             </div>
 
           </div>

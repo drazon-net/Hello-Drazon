@@ -22,12 +22,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal, onOpenChat }) =>
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Home', href: '/', sectionId: 'hero-section' },
+    { name: 'Services', href: '/services', sectionId: 'services' },
+    { name: 'Pricing', href: '/pricing', sectionId: 'pricing' },
+    { name: 'About', href: '/about', sectionId: 'about' },
+    { name: 'Contact', href: '/contact', sectionId: 'contact' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, sectionId?: string) => {
+    if (location.pathname === '/' && sectionId) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        e.preventDefault();
+        const yOffset = -80;
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header
@@ -54,6 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal, onOpenChat }) =>
                 <Link
                   key={link.name}
                   to={link.href}
+                  onClick={(e) => handleNavClick(e, link.href, link.sectionId)}
                   className={`text-sm font-semibold transition-colors duration-200 ${
                     isActive
                       ? 'text-[#10B981] border-b-2 border-[#10B981] pb-1'
@@ -121,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal, onOpenChat }) =>
                 <Link
                   key={link.name}
                   to={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href, link.sectionId)}
                   className={`px-4 py-2.5 text-sm font-semibold rounded-lg transition-colors ${
                     isActive
                       ? 'bg-emerald-50 text-[#10B981] border border-emerald-200'

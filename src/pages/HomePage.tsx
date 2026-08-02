@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HeroSection } from '../components/HeroSection';
-import { SERVICES_DATA } from '../data/agencyData';
+import { ContactSection } from '../components/ContactSection';
+import { SERVICES_DATA, PRICING_PLANS } from '../data/agencyData';
 import { Code2, Palette, ShieldCheck, ArrowRight, Sparkles, Zap, Star, Check, Shield, Clock, Award } from 'lucide-react';
 
 interface HomePageProps {
@@ -22,13 +23,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
     }
   };
 
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el) {
+      const yOffset = -80;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="space-y-16 pb-12">
       {/* 1. Hero Section */}
       <HeroSection onGetWebsite={onOpenProposal} />
 
       {/* 2. Brand Introduction Section */}
-      <section className="py-12 relative border-y border-slate-200/80 bg-white/60 backdrop-blur-md">
+      <section id="about" className="py-12 relative border-y border-slate-200/80 bg-white/60 backdrop-blur-md scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-12 gap-8 items-center">
             
@@ -101,7 +111,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
       </section>
 
       {/* 3. Services Overview Section */}
-      <section className="py-8 relative">
+      <section id="services" className="py-8 relative scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-[#059669] uppercase tracking-wider">
@@ -177,15 +187,76 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
             >
               Explore All Services
             </Link>
-            <Link
-              to="/contact"
+            <button
+              onClick={scrollToContact}
               className="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider border border-slate-200 transition cursor-pointer"
             >
               Contact Us Directly
-            </Link>
+            </button>
           </div>
         </div>
       </section>
+
+      {/* 4. Pricing Overview Section (#pricing) */}
+      <section id="pricing" className="py-12 relative border-t border-slate-200/80 bg-white/40 backdrop-blur-md scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-[#059669] uppercase tracking-wider">
+              <Zap className="w-3.5 h-3.5 text-[#10B981]" />
+              <span>Transparent Investment</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+              Official Flat-Rate <span className="text-emerald-gradient">Pricing</span>
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base">
+              Clear NZD rates with zero hidden fees. Built to fit businesses of all sizes.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {PRICING_PLANS.map((plan) => (
+              <div
+                key={plan.id}
+                className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between bg-white border border-slate-200 shadow-sm relative ${
+                  plan.isPrimary ? 'border-2 border-[#10B981] shadow-lg shadow-[#10B981]/10' : ''
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xl font-black text-slate-900">{plan.name}</h3>
+                    {plan.isPrimary && (
+                      <span className="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-emerald-100 text-[#059669] rounded-md border border-emerald-200">
+                        Popular
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-slate-500 mb-4">{plan.description}</p>
+                  <p className="text-3xl font-black text-slate-900 mb-6">{plan.priceDisplay}</p>
+
+                  <ul className="space-y-2 mb-6">
+                    {plan.includes.slice(0, 4).map((inc, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
+                        <Check className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
+                        <span>{inc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <button
+                  onClick={scrollToContact}
+                  className="w-full py-2.5 px-4 text-xs font-bold text-white bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#10B981] rounded-xl shadow-md transition cursor-pointer"
+                >
+                  Select Plan
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Contact Section (#contact) */}
+      <ContactSection onOpenProposal={onOpenProposal} id="contact" />
     </div>
   );
 };
