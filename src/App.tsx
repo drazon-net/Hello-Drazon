@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -70,6 +71,9 @@ export default function App() {
           isOpen={chatAssistantOpen}
           onClose={() => setChatAssistantOpen(false)}
         />
+
+        {/* Vercel Speed Insights */}
+        <SpeedInsights />
       </div>
     </Router>
   );
