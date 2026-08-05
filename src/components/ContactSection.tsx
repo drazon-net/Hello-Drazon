@@ -16,14 +16,35 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(data.error || 'Failed to send message. Please try again or email hello@drazon.cc.cd.');
+      }
+    } catch (err: any) {
+      console.error('Contact submit error:', err);
+      setErrorMessage('Network connection error. Please try again.');
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 700);
+    }
   };
 
   return (
@@ -126,6 +147,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Send Us A Message</h3>
+
+                  {errorMessage && (
+                    <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold leading-relaxed animate-in fade-in duration-200">
+                      {errorMessage}
+                    </div>
+                  )}
 
                   {/* Name Field */}
                   <div>
