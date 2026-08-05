@@ -57,7 +57,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // 1. Send Main Inquiry Email to Agency (hellodrazon@outlook.com)
     const { data: mainData, error: mainError } = await resend.emails.send({
-      from: 'Drazon Contact Form <onboarding@resend.dev>',
+      from: 'Drazon Contact Form <hello@drazon.cc.cd>',
       to: ['hellodrazon@outlook.com'],
       replyTo: cleanEmail,
       subject: `New Inquiry from ${cleanName} (${cleanService})`,
@@ -108,7 +108,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // 2. Send Automatic Confirmation Email to Visitor
     try {
       await resend.emails.send({
-        from: 'Drazon Web Agency <onboarding@resend.dev>',
+        from: 'Drazon Web Agency <hello@drazon.cc.cd>',
         to: [cleanEmail],
         replyTo: 'hellodrazon@outlook.com',
         subject: `We've received your inquiry - Drazon Agency`,
