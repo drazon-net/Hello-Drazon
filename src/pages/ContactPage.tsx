@@ -12,4 +12,3 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenProposal }) => {
     </div>
   );
 };
-
