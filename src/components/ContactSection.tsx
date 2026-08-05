@@ -20,8 +20,31 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setErrorMessage(null);
+
+    // Client-side Validation
+    if (!formData.name.trim()) {
+      setErrorMessage('Please enter your full name.');
+      return;
+    }
+
+    if (!formData.email.trim()) {
+      setErrorMessage('Please enter your email address.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      setErrorMessage('Please enter a valid email address (e.g. name@example.com).');
+      return;
+    }
+
+    if (!formData.message.trim()) {
+      setErrorMessage('Please enter your message details.');
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const response = await fetch('/api/contact', {
@@ -29,7 +52,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          service: formData.service,
+          message: formData.message.trim(),
+        }),
       });
 
       const data = await response.json();
@@ -37,11 +65,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
       if (response.ok && data.success) {
         setSubmitted(true);
       } else {
-        setErrorMessage(data.error || 'Failed to send message. Please try again or email hello@drazon.cc.cd.');
+        setErrorMessage(data.error || 'Failed to send message. Please try again or email hellodrazon@outlook.com.');
       }
     } catch (err: any) {
       console.error('Contact submit error:', err);
-      setErrorMessage('Network connection error. Please try again.');
+      setErrorMessage('Network error. Please check your connection and try again.');
     } finally {
       setLoading(false);
     }
@@ -138,7 +166,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                     Official Contact Email: <span className="text-[#10B981] font-semibold">hello@drazon.cc.cd</span>
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        name: '',
+                        email: '',
+                        service: 'Website Development (NZ$699)',
+                        message: '',
+                      });
+                      setErrorMessage(null);
+                    }}
                     className="mt-4 px-6 py-2.5 text-xs font-bold uppercase text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition cursor-pointer"
                   >
                     Send Another Message

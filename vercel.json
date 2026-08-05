@@ -3,7 +3,6 @@
   "rewrites": [
     { "source": "/api/contact", "destination": "/api/contact" },
     { "source": "/api/health", "destination": "/api/health" },
-    { "source": "/api/test-email", "destination": "/api/test-email" },
     { "source": "/api/ai/proposal", "destination": "/api/ai/proposal" },
     { "source": "/api/ai/chat", "destination": "/api/ai/chat" },
     { "source": "/(.*)", "destination": "/index.html" }
