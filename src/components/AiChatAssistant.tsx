@@ -78,41 +78,43 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
   ];
 
   return (
-    <div className="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white border-l border-slate-200 shadow-2xl flex flex-col justify-between animate-in slide-in-from-right duration-300">
+    <div className="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white border-l border-[#5B443D]/10 shadow-2xl flex flex-col justify-between animate-in slide-in-from-right duration-300">
       
       {/* Header */}
-      <div className="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+      <div className="p-4 bg-[#F9F0ED] border-b border-[#5B443D]/10 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="p-1 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+          <div className="p-1 rounded-2xl bg-white border border-[#5B443D]/10 flex items-center justify-center shadow-xs">
             <DrazonLogo variant="icon-only" size="sm" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
-              <span>DRAZON.NET AI Advisor</span>
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+            <h3 className="text-sm font-black text-[#111111] flex items-center gap-1.5">
+              <span>DRAZON AI Advisor</span>
+              <span className="w-2 h-2 rounded-full bg-[#F35A24] animate-pulse" />
             </h3>
-            <p className="text-[10px] text-slate-500">24/7 Web Strategy & Growth Assistant</p>
+            <p className="text-[10px] text-[#5B443D] font-medium">24/7 Web Strategy & Growth Assistant</p>
           </div>
         </div>
 
         <button
           onClick={onClose}
-          className="p-2 text-slate-400 hover:text-slate-800 bg-white rounded-lg border border-slate-200 cursor-pointer shadow-sm"
+          className="p-2 text-[#5B443D] hover:text-[#111111] bg-white rounded-full border border-[#5B443D]/15 cursor-pointer shadow-xs transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
       </div>
 
       {/* Messages List */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#F3EEEC]/50">
         {messages.map((msg, idx) => (
           <div
             key={idx}
             className={`flex items-start gap-2.5 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
           >
             <div
-              className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold ${
-                msg.role === 'user' ? 'bg-slate-800 text-white' : 'bg-[#10B981] text-white shadow-md shadow-[#10B981]/20'
+              className={`w-8 h-8 rounded-2xl flex items-center justify-center shrink-0 text-xs font-bold ${
+                msg.role === 'user'
+                  ? 'bg-[#5B443D] text-white'
+                  : 'bg-gradient-to-br from-[#F35A24] to-[#D86A43] text-white shadow-xs'
               }`}
             >
               {msg.role === 'user' ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
@@ -121,8 +123,8 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
             <div
               className={`p-3.5 rounded-2xl text-xs leading-relaxed max-w-[80%] ${
                 msg.role === 'user'
-                  ? 'bg-[#10B981] text-white font-medium rounded-tr-none shadow-sm'
-                  : 'bg-white border border-slate-200 text-slate-800 rounded-tl-none shadow-sm'
+                  ? 'bg-gradient-to-r from-[#F35A24] to-[#D86A43] text-white font-medium rounded-tr-none shadow-xs'
+                  : 'bg-white border border-[#5B443D]/10 text-[#111111] rounded-tl-none shadow-xs'
               }`}
             >
               {msg.text}
@@ -131,8 +133,8 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
         ))}
 
         {loading && (
-          <div className="flex items-center gap-2 text-xs text-slate-500 p-2">
-            <Loader2 className="w-4 h-4 animate-spin text-[#10B981]" />
+          <div className="flex items-center gap-2 text-xs text-[#5B443D] p-2">
+            <Loader2 className="w-4 h-4 animate-spin text-[#F35A24]" />
             <span>Drazon AI is thinking...</span>
           </div>
         )}
@@ -141,14 +143,14 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
       </div>
 
       {/* Quick Prompts */}
-      <div className="p-3 bg-slate-50 border-t border-slate-200 space-y-2">
-        <p className="text-[10px] font-bold text-slate-500 uppercase">Suggested Questions:</p>
+      <div className="p-3 bg-[#F9F0ED] border-t border-[#5B443D]/10 space-y-2">
+        <p className="text-[10px] font-extrabold text-[#5B443D] uppercase tracking-wider">Suggested Questions:</p>
         <div className="flex flex-wrap gap-1.5">
           {quickPrompts.map((qp, i) => (
             <button
               key={i}
               onClick={() => setInput(qp)}
-              className="px-2.5 py-1 rounded-md bg-white hover:bg-slate-100 border border-slate-200 text-[10px] font-medium text-slate-700 transition text-left cursor-pointer shadow-sm"
+              className="px-3 py-1.5 rounded-full bg-white hover:bg-[#F3EEEC] border border-[#5B443D]/15 text-[10px] font-bold text-[#111111] transition text-left cursor-pointer shadow-xs"
             >
               {qp}
             </button>
@@ -157,18 +159,18 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
       </div>
 
       {/* Input Box */}
-      <form onSubmit={handleSend} className="p-4 bg-white border-t border-slate-200 flex items-center gap-2">
+      <form onSubmit={handleSend} className="p-4 bg-white border-t border-[#5B443D]/10 flex items-center gap-2">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about website plans, SEO, timeline..."
-          className="flex-1 px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs focus:border-[#10B981] focus:outline-none"
+          className="flex-1 px-4 py-2.5 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-xs focus:border-[#F35A24] focus:bg-white focus:outline-none transition"
         />
         <button
           type="submit"
           disabled={loading || !input.trim()}
-          className="p-2.5 bg-[#10B981] hover:bg-[#059669] disabled:opacity-40 text-white rounded-xl shadow-md transition cursor-pointer"
+          className="p-2.5 bg-gradient-to-r from-[#F35A24] to-[#D86A43] hover:shadow-md disabled:opacity-40 text-white rounded-2xl shadow-xs transition cursor-pointer"
         >
           <Send className="w-4 h-4" />
         </button>

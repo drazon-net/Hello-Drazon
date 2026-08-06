@@ -3,9 +3,9 @@ import { ARCHITECTURAL_BW_IMAGE_PATH } from '../data/agencyData';
 
 export const MobileBackground: React.FC = () => {
   return (
-    <div className="block sm:hidden fixed inset-0 pointer-events-none overflow-hidden z-0 select-none bg-slate-50/90 transform-gpu">
+    <div className="block sm:hidden fixed inset-0 pointer-events-none overflow-hidden z-0 select-none bg-[#F9F0ED] transform-gpu">
       {/* 1. Base Architectural Texture */}
-      <div className="absolute inset-0 opacity-[0.08] mix-blend-multiply">
+      <div className="absolute inset-0 opacity-[0.05] mix-blend-multiply">
         <img
           src={ARCHITECTURAL_BW_IMAGE_PATH}
           alt=""
@@ -17,17 +17,17 @@ export const MobileBackground: React.FC = () => {
         />
       </div>
 
-      {/* 2. Soft Ambient White Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/85" />
+      {/* 2. Soft Ambient Warm Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#F9F0ED]/90 via-[#F9F0ED]/75 to-[#F3EEEC]" />
 
       {/* 3. LIGHTWEIGHT CSS RADIAL SPOTLIGHTS */}
       <div
         className="absolute inset-0 pointer-events-none opacity-80"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.16) 0%, transparent 50%),
-            radial-gradient(circle at 10% 30%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
-            radial-gradient(circle at 85% 60%, rgba(5, 150, 105, 0.14) 0%, transparent 55%)
+            radial-gradient(circle at 80% 10%, rgba(243, 90, 36, 0.14) 0%, transparent 50%),
+            radial-gradient(circle at 10% 30%, rgba(216, 106, 67, 0.10) 0%, transparent 50%),
+            radial-gradient(circle at 85% 60%, rgba(139, 14, 45, 0.08) 0%, transparent 55%)
           `,
         }}
       />
@@ -42,15 +42,15 @@ export const MobileBackground: React.FC = () => {
         >
           <defs>
             <linearGradient id="mob-ribbon-1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#10B981" stopOpacity="0.40" />
-              <stop offset="50%" stopColor="#059669" stopOpacity="0.22" />
-              <stop offset="100%" stopColor="#34D399" stopOpacity="0.05" />
+              <stop offset="0%" stopColor="#F35A24" stopOpacity="0.25" />
+              <stop offset="50%" stopColor="#D86A43" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="#8B0E2D" stopOpacity="0.02" />
             </linearGradient>
 
             <linearGradient id="mob-ribbon-2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#06B6D4" stopOpacity="0.35" />
-              <stop offset="60%" stopColor="#10B981" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="#059669" stopOpacity="0.0" />
+              <stop offset="0%" stopColor="#8B0E2D" stopOpacity="0.20" />
+              <stop offset="60%" stopColor="#F35A24" stopOpacity="0.10" />
+              <stop offset="100%" stopColor="#5B443D" stopOpacity="0.0" />
             </linearGradient>
           </defs>
 
@@ -65,16 +65,16 @@ export const MobileBackground: React.FC = () => {
             />
             <path
               d="M-30, 0 C160, 180 130, 380 10, 540 C-60, 640 50, 750 220, 830"
-              stroke="#10B981"
-              strokeWidth="2"
-              strokeOpacity="0.45"
+              stroke="#F35A24"
+              strokeWidth="1.8"
+              strokeOpacity="0.30"
               fill="none"
             />
             <path
               d="M180, -20 C290, 120 250, 320 380, 480"
-              stroke="#06B6D4"
+              stroke="#D86A43"
               strokeWidth="1.5"
-              strokeOpacity="0.35"
+              strokeOpacity="0.25"
               fill="none"
             />
           </g>
@@ -82,12 +82,12 @@ export const MobileBackground: React.FC = () => {
       </div>
 
       {/* 5. GLASS SHAPES */}
-      <div className="absolute top-20 right-4 w-20 h-20 rounded-full border border-emerald-500/20 bg-white/70 shadow-sm">
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-400/15 to-teal-400/10" />
+      <div className="absolute top-20 right-4 w-20 h-20 rounded-full border border-[#F35A24]/20 bg-white/70 shadow-sm">
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-[#F35A24]/15 to-[#D86A43]/10" />
       </div>
 
-      <div className="absolute top-[44%] -left-6 w-28 h-14 rounded-2xl border border-teal-500/20 bg-white/70 shadow-sm">
-        <div className="w-full h-full rounded-2xl bg-gradient-to-r from-cyan-400/15 to-emerald-400/10" />
+      <div className="absolute top-[44%] -left-6 w-28 h-14 rounded-2xl border border-[#D86A43]/20 bg-white/70 shadow-sm">
+        <div className="w-full h-full rounded-2xl bg-gradient-to-r from-[#8B0E2D]/12 to-[#F35A24]/10" />
       </div>
     </div>
   );

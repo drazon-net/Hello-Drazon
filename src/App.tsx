@@ -23,10 +23,10 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ defa
 const PageLoadingFallback: React.FC = () => (
   <div className="min-h-[65vh] flex items-center justify-center p-8">
     <div className="flex flex-col items-center gap-3">
-      <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center animate-spin">
+      <div className="w-10 h-10 rounded-2xl bg-[#F9F0ED] border border-[#5B443D]/15 text-[#F35A24] flex items-center justify-center animate-spin">
         <Sparkles className="w-5 h-5" />
       </div>
-      <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Loading Drazon...</p>
+      <p className="text-xs font-bold text-[#5B443D] uppercase tracking-wider">Loading Drazon...</p>
     </div>
   </div>
 );
@@ -46,7 +46,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen text-slate-900 font-sans selection:bg-[#10B981] selection:text-white relative overflow-hidden flex flex-col justify-between bg-transparent">
+      <div className="min-h-screen text-[#111111] font-sans selection:bg-[#F35A24] selection:text-white relative overflow-hidden flex flex-col justify-between bg-transparent">
         
         {/* Desktop Multi-Layered Atmosphere & Wave Background */}
         <div className="hidden sm:block">

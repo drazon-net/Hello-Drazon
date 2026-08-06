@@ -4,9 +4,9 @@ import { ARCHITECTURAL_BW_IMAGE_PATH } from '../data/agencyData';
 
 export const BackgroundAtmosphere: React.FC = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0 bg-slate-50/90 transform-gpu">
+    <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0 bg-[#F9F0ED] transform-gpu">
       {/* 1. Base Architectural Graphic Texture */}
-      <div className="absolute inset-0 opacity-[0.08] mix-blend-multiply pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.05] mix-blend-multiply pointer-events-none">
         <img
           src={ARCHITECTURAL_BW_IMAGE_PATH}
           alt=""
@@ -18,19 +18,19 @@ export const BackgroundAtmosphere: React.FC = () => {
         />
       </div>
 
-      {/* 2. Soft Ambient Lighting Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/85" />
+      {/* 2. Soft Warm Ambient Lighting Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#F9F0ED]/90 via-[#F9F0ED]/75 to-[#F3EEEC]" />
 
-      {/* 3. LIGHTWEIGHT MESH GRADIENT SPOTLIGHTS (Pure CSS Radial Gradients - Zero Blur Filter Overhead) */}
+      {/* 3. LIGHTWEIGHT MESH GRADIENT SPOTLIGHTS */}
       <div
         className="absolute inset-0 pointer-events-none opacity-80"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 10% 15%, rgba(16, 185, 129, 0.14) 0%, rgba(5, 150, 105, 0.05) 35%, transparent 65%),
-            radial-gradient(circle at 90% 10%, rgba(6, 182, 212, 0.12) 0%, rgba(16, 185, 129, 0.04) 30%, transparent 60%),
-            radial-gradient(circle at 15% 55%, rgba(52, 211, 153, 0.10) 0%, rgba(16, 185, 129, 0.03) 40%, transparent 70%),
-            radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.10) 0%, rgba(5, 150, 105, 0.03) 35%, transparent 65%),
-            radial-gradient(circle at 20% 90%, rgba(5, 150, 105, 0.12) 0%, rgba(16, 185, 129, 0.04) 40%, transparent 70%)
+            radial-gradient(circle at 10% 15%, rgba(243, 90, 36, 0.12) 0%, rgba(216, 106, 67, 0.04) 35%, transparent 65%),
+            radial-gradient(circle at 90% 10%, rgba(139, 14, 45, 0.08) 0%, rgba(243, 90, 36, 0.03) 30%, transparent 60%),
+            radial-gradient(circle at 15% 55%, rgba(216, 106, 67, 0.08) 0%, rgba(91, 68, 61, 0.03) 40%, transparent 70%),
+            radial-gradient(circle at 85% 65%, rgba(243, 90, 36, 0.09) 0%, rgba(139, 14, 45, 0.03) 35%, transparent 65%),
+            radial-gradient(circle at 20% 90%, rgba(91, 68, 61, 0.08) 0%, rgba(243, 90, 36, 0.03) 40%, transparent 70%)
           `,
         }}
       />
@@ -42,7 +42,7 @@ export const BackgroundAtmosphere: React.FC = () => {
 
       {/* 5. ARCHITECTURAL GEOMETRIC VECTOR ACCENTS */}
       <svg
-        className="absolute top-12 right-12 w-[420px] h-[420px] opacity-20 text-[#059669]"
+        className="absolute top-12 right-12 w-[420px] h-[420px] opacity-15 text-[#F35A24]"
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export const BackgroundAtmosphere: React.FC = () => {
       </svg>
 
       <svg
-        className="absolute bottom-12 left-8 w-[360px] h-[360px] opacity-15 text-[#10B981]"
+        className="absolute bottom-12 left-8 w-[360px] h-[360px] opacity-12 text-[#D86A43]"
         viewBox="0 0 300 300"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -64,16 +64,16 @@ export const BackgroundAtmosphere: React.FC = () => {
         <path d="M0 40 L300 190 M0 90 L300 240 M0 140 L300 290 M40 0 L190 300 M90 0 L240 300 M140 0 L290 300" stroke="currentColor" strokeWidth="1.2" strokeDasharray="4 6" />
       </svg>
 
-      {/* 6. LIGHTWEIGHT FLOATING GLASS ACCENTS (Translucent gradients without heavy backdrop filter) */}
-      <div className="hidden lg:block absolute top-32 left-[10%] w-24 h-24 rounded-full border border-emerald-500/20 bg-white/70 shadow-sm">
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-400/15 via-transparent to-teal-400/10" />
+      {/* 6. LIGHTWEIGHT FLOATING GLASS ACCENTS */}
+      <div className="hidden lg:block absolute top-32 left-[10%] w-24 h-24 rounded-full border border-[#F35A24]/20 bg-white/70 shadow-sm">
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-[#F35A24]/15 via-transparent to-[#D86A43]/10" />
       </div>
 
-      <div className="hidden lg:block absolute top-[48%] right-[6%] w-36 h-18 rounded-3xl border border-teal-500/20 bg-white/70 shadow-sm">
-        <div className="w-full h-full rounded-3xl bg-gradient-to-tr from-cyan-400/15 via-transparent to-emerald-400/10" />
+      <div className="hidden lg:block absolute top-[48%] right-[6%] w-36 h-18 rounded-3xl border border-[#D86A43]/20 bg-white/70 shadow-sm">
+        <div className="w-full h-full rounded-3xl bg-gradient-to-tr from-[#8B0E2D]/12 via-transparent to-[#F35A24]/10" />
       </div>
 
-      <div className="hidden lg:block absolute bottom-36 left-[12%] w-20 h-20 rounded-full border-2 border-emerald-400/25 bg-white/60 shadow-sm" />
+      <div className="hidden lg:block absolute bottom-36 left-[12%] w-20 h-20 rounded-full border-2 border-[#F35A24]/20 bg-white/60 shadow-sm" />
     </div>
   );
 };
