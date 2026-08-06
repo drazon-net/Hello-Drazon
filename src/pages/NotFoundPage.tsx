@@ -7,9 +7,6 @@ export const NotFoundPage: React.FC = () => {
     <div className="min-h-[80vh] py-24 sm:py-32 flex items-center justify-center px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-xl w-full text-center space-y-8 glass-card rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-2xl relative overflow-hidden">
         
-        {/* Glow orb background */}
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 bg-emerald-500/10 blur-[90px] rounded-full pointer-events-none" />
-
         {/* 404 Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-black text-[#059669] uppercase tracking-wider">
           <Sparkles className="w-4 h-4 text-[#10B981]" />

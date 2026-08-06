@@ -10,9 +10,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetWebsite }) => {
   return (
     <section id="hero-section" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       
-      {/* Subtle Frosted Glass Backdrop Card (3–8% Opacity) */}
-      <div className="absolute inset-x-4 sm:inset-x-8 top-8 bottom-4 rounded-[2.5rem] bg-white/[0.05] backdrop-blur-2xl border border-[#5B443D]/10 shadow-[0_8px_30px_rgba(91,68,61,0.02)] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
@@ -20,7 +17,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetWebsite }) => {
           <div className="lg:col-span-7 space-y-7 text-left">
             
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] shadow-xs backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-[#F35A24]" />
               <span>Premium Digital Agency & Web Architecture</span>
             </div>
@@ -99,8 +96,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetWebsite }) => {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Subtle Glass Frame (No Glowing Circles or Colorful Blobs) */}
-              <div className="absolute -inset-2 rounded-3xl bg-white/40 border border-[#5B443D]/10 backdrop-blur-md shadow-xs pointer-events-none" />
+              {/* Subtle Frame */}
+              <div className="absolute -inset-2 rounded-3xl bg-white/50 border border-[#5B443D]/10 shadow-xs pointer-events-none" />
 
               {/* Desktop Browser Canvas */}
               <div className="relative rounded-2xl bg-white border border-[#5B443D]/15 shadow-xl p-4 overflow-hidden">
@@ -176,7 +173,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetWebsite }) => {
               </div>
 
               {/* Clean Floating Badge 1 */}
-              <div className="absolute -bottom-4 -left-4 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#5B443D]/15 shadow-lg flex items-center gap-3 z-20">
+              <div className="absolute -bottom-4 -left-4 p-3.5 rounded-2xl bg-white border border-[#5B443D]/15 shadow-lg flex items-center gap-3 z-20">
                 <div className="w-9 h-9 rounded-xl bg-[#F9F0ED] border border-[#5B443D]/10 flex items-center justify-center text-[#F35A24] shrink-0">
                   <Sparkles className="w-4 h-4" />
                 </div>
@@ -187,7 +184,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetWebsite }) => {
               </div>
 
               {/* Clean Floating Badge 2 */}
-              <div className="absolute -top-4 -right-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-[#5B443D]/15 shadow-lg flex items-center gap-2.5 z-20">
+              <div className="absolute -top-4 -right-4 p-3 rounded-2xl bg-white border border-[#5B443D]/15 shadow-lg flex items-center gap-2.5 z-20">
                 <div className="w-7 h-7 rounded-lg bg-[#F3EEEC] flex items-center justify-center text-[#F35A24]">
                   <MousePointer className="w-3.5 h-3.5" />
                 </div>

@@ -13,7 +13,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenProposal }) =>
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
             <Globe2 className="w-3.5 h-3.5 text-[#F35A24]" />
             <span>About Drazon</span>
           </div>
@@ -30,7 +30,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenProposal }) =>
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           
           {/* Card 1: Who We Are */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-[#5B443D]/10 hover:border-[#F35A24]/40 shadow-sm hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between">
+          <div className="bg-white rounded-3xl p-8 border border-[#5B443D]/10 hover:border-[#F35A24]/40 shadow-sm hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#F9F0ED] flex items-center justify-center text-[#F35A24] mb-6 border border-[#5B443D]/10 shadow-xs">
                 <Users className="w-6 h-6" />
@@ -47,7 +47,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenProposal }) =>
           </div>
 
           {/* Card 2: Why You Need a Strong Web Presence */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-[#5B443D]/10 hover:border-[#F35A24]/40 shadow-sm hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between">
+          <div className="bg-white rounded-3xl p-8 border border-[#5B443D]/10 hover:border-[#F35A24]/40 shadow-sm hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#F9F0ED] flex items-center justify-center text-[#F35A24] mb-6 border border-[#5B443D]/10 shadow-xs">
                 <Lightbulb className="w-6 h-6" />
@@ -64,7 +64,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenProposal }) =>
           </div>
 
           {/* Card 3: Our Mission */}
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-[#5B443D]/10 hover:border-[#F35A24]/40 shadow-sm hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between">
+          <div className="bg-white rounded-3xl p-8 border border-[#5B443D]/10 hover:border-[#F35A24]/40 shadow-sm hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#F9F0ED] flex items-center justify-center text-[#F35A24] mb-6 border border-[#5B443D]/10 shadow-xs">
                 <Target className="w-6 h-6" />

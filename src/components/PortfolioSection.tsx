@@ -19,7 +19,7 @@ export const PortfolioSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
             <Award className="w-3.5 h-3.5 text-[#F35A24]" />
             <span>Featured Case Studies</span>
           </div>
@@ -68,18 +68,18 @@ export const PortfolioSection: React.FC = () => {
 
                   {/* Top Badges */}
                   <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-[#5B443D]/15 text-xs font-bold text-[#111111] shadow-xs">
+                    <span className="px-3 py-1 rounded-full bg-white border border-[#5B443D]/15 text-xs font-bold text-[#111111] shadow-xs">
                       {project.category}
                     </span>
                   </div>
 
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-[#5B443D]/15 text-xs font-extrabold text-[#8B0E2D] shadow-xs">
+                  <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#5B443D]/15 text-xs font-extrabold text-[#8B0E2D] shadow-xs">
                     <Zap className="w-3.5 h-3.5 fill-[#F35A24] text-[#F35A24]" />
                     <span>Lighthouse {project.lighthouseScore}/100</span>
                   </div>
 
                   {/* Bottom Impact Banner */}
-                  <div className="absolute bottom-4 left-4 right-4 px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#5B443D]/10 flex items-center justify-between shadow-xs">
+                  <div className="absolute bottom-4 left-4 right-4 px-4 py-2.5 rounded-2xl bg-white border border-[#5B443D]/10 flex items-center justify-between shadow-xs">
                     <span className="text-xs text-[#5B443D] font-bold">Conversion Impact:</span>
                     <span className="text-xs font-black text-[#F35A24]">{project.conversionBoost}</span>
                   </div>
@@ -125,7 +125,7 @@ export const PortfolioSection: React.FC = () => {
 
       {/* Case Study Modal */}
       {activeProjectModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 animate-in fade-in duration-200">
           <div className="relative w-full max-w-4xl bg-white border border-[#5B443D]/15 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
             
             <button

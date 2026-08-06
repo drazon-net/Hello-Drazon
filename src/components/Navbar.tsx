@@ -35,8 +35,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal, onOpenChat }) =>
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#F9F0ED]/90 backdrop-blur-xl border-b border-[#5B443D]/10 py-3.5 shadow-sm'
-          : 'bg-[#F9F0ED]/70 backdrop-blur-md py-4 border-b border-[#5B443D]/5'
+          ? 'bg-[#F9F0ED]/98 border-b border-[#5B443D]/15 py-3.5 shadow-sm'
+          : 'bg-[#F9F0ED]/90 py-4 border-b border-[#5B443D]/10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProposal, onOpenChat }) =>
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#F9F0ED]/95 backdrop-blur-xl border-b border-[#5B443D]/10 px-4 pt-4 pb-6 mt-3 space-y-4 shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden bg-[#F9F0ED] border-b border-[#5B443D]/15 px-4 pt-4 pb-6 mt-3 space-y-4 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.href;

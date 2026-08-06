@@ -29,7 +29,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
             <Zap className="w-3.5 h-3.5 text-[#F35A24]" />
             <span>Official Launch Services</span>
           </div>
@@ -53,7 +53,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 group overflow-hidden ${
                   isPrimary
                     ? 'bg-white border-2 border-[#F35A24] shadow-xl shadow-[#F35A24]/15 lg:-translate-y-2'
-                    : 'bg-white/90 backdrop-blur-md border border-[#5B443D]/10 hover:border-[#F35A24]/40 shadow-sm hover:shadow-lg'
+                    : 'bg-white border border-[#5B443D]/10 hover:border-[#F35A24]/40 shadow-sm hover:shadow-lg'
                 }`}
               >
                 {/* Primary Badge */}
@@ -130,7 +130,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
       {/* Detail Modal */}
       {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 animate-in fade-in duration-200">
           <div className="relative w-full max-w-xl bg-white border border-[#5B443D]/15 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
             
             <button

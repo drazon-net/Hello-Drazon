@@ -59,11 +59,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenProposal }) =>
                 </div>
               )}
 
-              {/* Corner Glow */}
-              <div className={`absolute -top-12 -right-12 w-32 h-32 rounded-full blur-2xl transition-all duration-300 pointer-events-none ${
-                isPrimary ? 'bg-emerald-500/15' : 'bg-emerald-500/5 group-hover:bg-emerald-500/10'
-              }`} />
-
               <div>
                 {/* Icon & Price */}
                 <div className="flex items-center justify-between mb-6">

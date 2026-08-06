@@ -3,6 +3,7 @@ import { ServiceItem, PortfolioProject, PricingPlan, Testimonial, ProcessStep, B
 export const HERO_IMAGE_PATH = '/src/assets/images/drazon_hero_3d_1785668906125.jpg';
 export const DRAZON_OFFICIAL_LOGO_PATH = '/src/assets/images/drazon_official_logo_1785672620875.jpg';
 export const DRAZON_FAVICON_PATH = '/src/assets/images/drazon_favicon_mark_1785672645275.jpg';
+export const SUNSET_SKY_IMAGE_PATH = '/src/assets/images/sunset_sky_bg_1786050593092.jpg';
 export const ARCHITECTURAL_BW_IMAGE_PATH = 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1600';
 
 export const SERVICES_DATA: ServiceItem[] = [

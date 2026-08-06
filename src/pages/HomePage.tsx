@@ -28,7 +28,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
       <HeroSection onGetWebsite={onOpenProposal} />
 
       {/* 2. Brand Introduction Section */}
-      <section className="py-12 relative border-y border-[#5B443D]/10 bg-white/60 backdrop-blur-md">
+      <section className="py-12 relative border-y border-[#5B443D]/10 bg-white/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-12 gap-8 items-center">
             
@@ -188,7 +188,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenProposal }) => {
       </section>
 
       {/* 4. Pricing Overview Section */}
-      <section className="py-12 relative border-t border-[#5B443D]/10 bg-white/40 backdrop-blur-md">
+      <section className="py-12 relative border-t border-[#5B443D]/10 bg-white/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F9F0ED] border border-[#5B443D]/10 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider">

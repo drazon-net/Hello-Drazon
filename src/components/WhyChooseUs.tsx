@@ -21,7 +21,7 @@ export const WhyChooseUs: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
             <CheckCircle2 className="w-3.5 h-3.5 text-[#F35A24]" />
             <span>Why Choose Drazon</span>
           </div>
@@ -39,7 +39,7 @@ export const WhyChooseUs: React.FC = () => {
           {BENEFITS_DATA.map((benefit, index) => (
             <div
               key={index}
-              className="bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-[#5B443D]/10 space-y-4 relative group hover:border-[#F35A24]/40 hover:shadow-xl shadow-sm transition-all duration-300"
+              className="bg-white rounded-2xl p-8 border border-[#5B443D]/10 space-y-4 relative group hover:border-[#F35A24]/40 hover:shadow-xl shadow-sm transition-all duration-300"
             >
               {/* Highlight Badge */}
               <div className="flex items-center justify-between">

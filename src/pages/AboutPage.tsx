@@ -22,7 +22,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProposal }) => {
 
       {/* Primary Statement Card */}
       <div className="mb-16 p-8 sm:p-12 rounded-3xl bg-white border-2 border-[#10B981] bg-gradient-to-r from-emerald-50/60 via-white to-emerald-50/60 text-center shadow-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto space-y-4">
           <span className="text-xs font-bold uppercase tracking-widest text-[#059669]">Our Core Mission</span>
           <blockquote className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 leading-relaxed">
