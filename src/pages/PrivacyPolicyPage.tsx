@@ -47,7 +47,7 @@ export const PrivacyPolicyPage: React.FC = () => {
             <h2 className="text-xl font-bold text-slate-900">1. Commitment to Data Protection</h2>
           </div>
           <p>
-            Drazon ("we", "our", or "us") operates the website and digital services at drazon.net. This Privacy Policy details how we collect, process, store, and protect information when you visit our website, interact with our AI proposal generators, or hire us for web development, UI/UX design, or website maintenance services.
+            Drazon ("we", "our", or "us") operates the website and digital services at drazon.cc.cd. This Privacy Policy details how we collect, process, store, and protect information when you visit our website, interact with our AI proposal generators, or hire us for web development, UI/UX design, or website maintenance services.
           </p>
           <p>
             We strictly comply with applicable privacy regulations, including the New Zealand Privacy Act 2020 and global standards such as the General Data Protection Regulation (GDPR).

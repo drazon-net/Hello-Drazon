@@ -114,7 +114,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetWebsite }) => {
                   </div>
                   <div className="px-3 py-1 rounded-full bg-[#F3EEEC] text-[10px] font-mono text-[#5B443D] flex items-center gap-1.5">
                     <Globe className="w-3 h-3 text-[#F35A24]" />
-                    <span>drazon.agency</span>
+                    <span>drazon.cc.cd</span>
                   </div>
                   <div className="w-10" />
                 </div>

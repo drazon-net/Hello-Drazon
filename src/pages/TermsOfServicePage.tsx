@@ -47,7 +47,7 @@ export const TermsOfServicePage: React.FC = () => {
             <h2 className="text-xl font-bold text-slate-900">1. Acceptance of Terms & Agency Scope</h2>
           </div>
           <p>
-            By accessing drazon.net, requesting an AI project proposal, or entering into an agreement with Drazon ("Agency", "we", "us"), you agree to be bound by these Terms of Service.
+            By accessing drazon.cc.cd, requesting an AI project proposal, or entering into an agreement with Drazon ("Agency", "we", "us"), you agree to be bound by these Terms of Service.
           </p>
           <p>
             Drazon provides high-performance web engineering, custom UI/UX design, AI automations, and ongoing website maintenance for corporate clients, SMBs, and startups.

@@ -28,8 +28,8 @@ export const DrazonLogo: React.FC<DrazonLogoProps> = ({
   const OfficialImageMark = (
     <img
       src={DRAZON_FAVICON_PATH}
-      alt="DRAZON.NET Official Logo Mark"
-      className={`${dimensions.iconSize} object-contain shrink-0 drop-shadow-[0_2px_12px_rgba(16,185,129,0.35)] transition-transform duration-300 hover:scale-105 rounded-xl`}
+      alt="DRAZON.CC.CD Official Logo Mark"
+      className={`${dimensions.iconSize} object-contain shrink-0 drop-shadow-[0_2px_12px_rgba(243,90,36,0.35)] transition-transform duration-300 hover:scale-105 rounded-xl`}
       referrerPolicy="no-referrer"
     />
   );
@@ -80,7 +80,7 @@ export const DrazonLogo: React.FC<DrazonLogoProps> = ({
       <div className={`inline-flex items-center ${className}`}>
         <img
           src={DRAZON_OFFICIAL_LOGO_PATH}
-          alt="DRAZON.NET Official Brand Logo"
+          alt="DRAZON.CC.CD Official Brand Logo"
           className={`${dimensions.height} object-contain rounded-lg transition-all duration-300 hover:brightness-105 drop-shadow-sm`}
           referrerPolicy="no-referrer"
         />
@@ -93,7 +93,7 @@ export const DrazonLogo: React.FC<DrazonLogoProps> = ({
     <div className="flex flex-col justify-center leading-none select-none">
       <div className={`${dimensions.text} font-black tracking-wider text-[#111111] flex items-center`}>
         <span>DRAZON</span>
-        <span className="text-[#F35A24] ml-0.5 font-extrabold">.NET</span>
+        <span className="text-[#F35A24] ml-0.5 font-extrabold">.CC.CD</span>
       </div>
       {showTagline && (
         <span className={`${dimensions.tagline} text-[#5B443D] font-mono tracking-widest uppercase mt-0.5`}>
