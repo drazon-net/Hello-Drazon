@@ -242,7 +242,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     tags: ['Startup', 'SaaS Landing Page', 'Interactive Demo', 'Waitlist Engine'],
     caseStudy: {
       challenge: 'Nova needed a world-class SaaS landing page to launch their product waitlist and impress seed investors.',
-      solution: 'We crafted a sleek dark-mode website with animated neon orange gradients, interactive product preview tabs, and viral waitlist counter.',
+      solution: 'We crafted a sleek dark-mode website with animated neon blue gradients, interactive product preview tabs, and viral waitlist counter.',
       results: [
         '1,450+ waitlist subscribers in 14 days',
         'Successfully closed $750k pre-seed round with website as pitch backdrop',

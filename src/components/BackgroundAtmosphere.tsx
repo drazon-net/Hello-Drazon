@@ -52,29 +52,29 @@ export const BackgroundAtmosphere: React.FC = () => {
           alt="Realistic Sunset Sky"
           loading="eager"
           decoding="async"
-          className="w-full h-full object-cover object-top contrast-[0.96] brightness-[0.90] scale-105"
+          className="w-full h-full object-cover object-top contrast-[1.12] brightness-[0.92] saturate-[0.90] scale-105"
           referrerPolicy="no-referrer"
         />
       </div>
 
-      {/* 3. Secondary Soft Cloud / Atmosphere Depth Layer with Parallax Offset */}
+      {/* 3. Horizon Warmth & Depth Layer */}
       <div 
-        className="absolute inset-0 opacity-30 mix-blend-screen transition-transform duration-100 ease-out will-change-transform"
+        className="absolute inset-0 opacity-40 mix-blend-screen transition-transform duration-100 ease-out will-change-transform"
         style={{
           transform: `translate3d(0, ${parallaxOffsetClouds}px, 0)`,
           backgroundImage: `
-            radial-gradient(circle at 50% 90%, rgba(254, 215, 170, 0.35) 0%, rgba(243, 90, 36, 0.15) 35%, transparent 70%),
-            radial-gradient(circle at 80% 40%, rgba(232, 121, 249, 0.2) 0%, transparent 60%),
-            radial-gradient(circle at 20% 30%, rgba(147, 197, 253, 0.15) 0%, transparent 55%)
+            radial-gradient(circle at 50% 88%, rgba(251, 146, 60, 0.45) 0%, rgba(225, 29, 72, 0.18) 35%, transparent 70%),
+            radial-gradient(circle at 80% 40%, rgba(99, 102, 241, 0.25) 0%, transparent 60%),
+            radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.2) 0%, transparent 55%)
           `
         }}
       />
 
-      {/* 4. Light Dark Overlay (20%) for Excellent Text Contrast while preserving sharp sunset */}
-      <div className="absolute inset-0 bg-black/20" />
+      {/* 4. Dark Overlay rgba(15,23,42,.35) for cinematic depth & WCAG text contrast */}
+      <div className="absolute inset-0 bg-[#0F172A]/35" />
 
       {/* 5. Subtle Light Blend Overlay for Seamless Page Flow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#F9F0ED]/30 to-[#F3EEEC]/65 mix-blend-normal" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-white/20 to-white/50 mix-blend-normal" />
 
       {/* 6. Ultra-Minimal Organic Noise Texture */}
       <svg

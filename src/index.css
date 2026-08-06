@@ -2,35 +2,31 @@
 
 @layer base {
   :root {
-    --color-primary: #F35A24;
-    --color-primary-hover: #D86A43;
-    --color-secondary: #5B443D;
-    --color-heading: #111111;
-    --color-body: #4A4A4A;
-    --color-accent: #D86A43;
-    --color-highlight: #8B0E2D;
-    --color-bg-primary: #F9F0ED;
-    --color-bg-section: #F3EEEC;
+    --color-primary: #1D4ED8;
+    --color-primary-hover: #1E40AF;
+    --color-secondary: #0F172A;
+    --color-heading: #0F172A;
+    --color-body: #475569;
+    --color-accent: #1D4ED8;
+    --color-highlight: #1E40AF;
+    --color-bg-primary: #FFFFFF;
+    --color-bg-section: #F8FAFC;
     --color-bg-card: #FFFFFF;
+    --color-border: #E2E8F0;
+    --color-success: #22C55E;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: #F9F0ED;
-    color: #4A4A4A;
+    background-color: #FFFFFF;
+    color: #0F172A;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif;
   }
 
   body {
     overflow-x: hidden;
-    background-color: #F9F0ED;
-    color: #4A4A4A;
-    background-image: 
-      radial-gradient(at 0% 0%, rgba(243, 90, 36, 0.08) 0px, transparent 50%),
-      radial-gradient(at 100% 10%, rgba(139, 14, 45, 0.06) 0px, transparent 50%),
-      radial-gradient(at 15% 55%, rgba(216, 106, 67, 0.07) 0px, transparent 50%),
-      radial-gradient(at 85% 80%, rgba(91, 68, 61, 0.05) 0px, transparent 50%);
-    background-attachment: fixed;
+    background-color: #FFFFFF;
+    color: #0F172A;
   }
 }
 
@@ -39,43 +35,87 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F9F0ED;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D86A43;
+  background: #1D4ED8;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F35A24;
+  background: #1E40AF;
 }
 
-/* Glassmorphism & Luxury Cards */
-.glass-card {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(91, 68, 61, 0.08);
-  box-shadow: 0 10px 30px -10px rgba(91, 68, 61, 0.06), 0 0 20px rgba(243, 90, 36, 0.03);
+/* Primary Button Styling */
+.btn-primary {
+  background: linear-gradient(135deg, #1D4ED8, #2563EB);
+  color: #FFFFFF;
+  border-radius: 14px;
+  height: 54px;
+  padding: 0 28px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 15px 40px rgba(29, 78, 216, 0.28);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1E40AF, #1D4ED8);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(29, 78, 216, 0.35);
 }
 
-.glass-card-hover {
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+/* Secondary Button Styling */
+.btn-secondary {
+  background: #FFFFFF;
+  color: #1D4ED8;
+  border: 1px solid #1D4ED8;
+  border-radius: 14px;
+  height: 54px;
+  padding: 0 28px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background: #F8FAFC;
+  color: #1E40AF;
+  border-color: #1E40AF;
+  transform: translateY(-2px);
 }
 
-.glass-card-hover:hover {
-  border-color: rgba(243, 90, 36, 0.35);
-  box-shadow: 0 20px 45px -12px rgba(243, 90, 36, 0.16), 0 0 25px rgba(243, 90, 36, 0.06);
-  transform: translateY(-4px);
+/* Premium Card Styling */
+.premium-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.premium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
+  border-color: #CBD5E1;
 }
 
 .text-brand-gradient {
-  background: linear-gradient(135deg, #111111 0%, #F35A24 60%, #8B0E2D 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #1D4ED8 60%, #1E40AF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-orange-gradient {
-  background: linear-gradient(135deg, #F35A24 0%, #D86A43 50%, #8B0E2D 100%);
+.text-blue-gradient {
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 50%, #1E40AF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -106,5 +146,6 @@
 .animate-float-reverse {
   animation: floatReverse 11s ease-in-out infinite;
 }
+
 
 

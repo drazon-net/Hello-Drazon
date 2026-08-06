@@ -24,11 +24,11 @@ export const MobileBackground: React.FC = () => {
         />
       </div>
 
-      {/* 3. Dark Transparent Overlay (20%) */}
-      <div className="absolute inset-0 bg-black/20" />
+      {/* 3. Dark Transparent Overlay (18%) */}
+      <div className="absolute inset-0 bg-black/18" />
 
       {/* 4. Gentle Light Blend Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#F9F0ED]/30 to-[#F3EEEC]/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-white/20 to-white/50" />
 
       {/* 5. Minimal Noise */}
       <svg

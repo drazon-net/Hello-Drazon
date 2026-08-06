@@ -78,33 +78,33 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
   ];
 
   return (
-    <div className="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white border-l border-[#5B443D]/10 shadow-2xl flex flex-col justify-between animate-in slide-in-from-right duration-300">
+    <div className="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white border-l border-[#E2E8F0] shadow-2xl flex flex-col justify-between animate-in slide-in-from-right duration-300">
       
       {/* Header */}
-      <div className="p-4 bg-[#F9F0ED] border-b border-[#5B443D]/10 flex items-center justify-between">
+      <div className="p-4 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="p-1 rounded-2xl bg-white border border-[#5B443D]/10 flex items-center justify-center shadow-xs">
+          <div className="p-1.5 rounded-2xl bg-white border border-[#E2E8F0] flex items-center justify-center shadow-xs">
             <DrazonLogo variant="icon-only" size="sm" />
           </div>
           <div>
-            <h3 className="text-sm font-black text-[#111111] flex items-center gap-1.5">
+            <h3 className="text-sm font-black text-[#0F172A] flex items-center gap-1.5">
               <span>DRAZON AI Advisor</span>
-              <span className="w-2 h-2 rounded-full bg-[#F35A24] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#1D4ED8] animate-pulse" />
             </h3>
-            <p className="text-[10px] text-[#5B443D] font-medium">24/7 Web Strategy & Growth Assistant</p>
+            <p className="text-[10px] text-[#475569] font-medium">24/7 Web Strategy & Growth Assistant</p>
           </div>
         </div>
 
         <button
           onClick={onClose}
-          className="p-2 text-[#5B443D] hover:text-[#111111] bg-white rounded-full border border-[#5B443D]/15 cursor-pointer shadow-xs transition-colors"
+          className="p-2 text-[#475569] hover:text-[#0F172A] bg-white rounded-full border border-[#E2E8F0] cursor-pointer shadow-xs transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
       </div>
 
       {/* Messages List */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#F3EEEC]/50">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#F8FAFC]/50">
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -113,8 +113,8 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
             <div
               className={`w-8 h-8 rounded-2xl flex items-center justify-center shrink-0 text-xs font-bold ${
                 msg.role === 'user'
-                  ? 'bg-[#5B443D] text-white'
-                  : 'bg-gradient-to-br from-[#F35A24] to-[#D86A43] text-white shadow-xs'
+                  ? 'bg-[#0F172A] text-white'
+                  : 'bg-[#1D4ED8] text-white shadow-xs'
               }`}
             >
               {msg.role === 'user' ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
@@ -123,8 +123,8 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
             <div
               className={`p-3.5 rounded-2xl text-xs leading-relaxed max-w-[80%] ${
                 msg.role === 'user'
-                  ? 'bg-gradient-to-r from-[#F35A24] to-[#D86A43] text-white font-medium rounded-tr-none shadow-xs'
-                  : 'bg-white border border-[#5B443D]/10 text-[#111111] rounded-tl-none shadow-xs'
+                  ? 'bg-[#1D4ED8] text-white font-medium rounded-tr-none shadow-xs'
+                  : 'bg-white border border-[#E2E8F0] text-[#0F172A] rounded-tl-none shadow-xs'
               }`}
             >
               {msg.text}
@@ -133,8 +133,8 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
         ))}
 
         {loading && (
-          <div className="flex items-center gap-2 text-xs text-[#5B443D] p-2">
-            <Loader2 className="w-4 h-4 animate-spin text-[#F35A24]" />
+          <div className="flex items-center gap-2 text-xs text-[#475569] p-2">
+            <Loader2 className="w-4 h-4 animate-spin text-[#1D4ED8]" />
             <span>Drazon AI is thinking...</span>
           </div>
         )}
@@ -143,14 +143,14 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
       </div>
 
       {/* Quick Prompts */}
-      <div className="p-3 bg-[#F9F0ED] border-t border-[#5B443D]/10 space-y-2">
-        <p className="text-[10px] font-extrabold text-[#5B443D] uppercase tracking-wider">Suggested Questions:</p>
+      <div className="p-3 bg-[#F8FAFC] border-t border-[#E2E8F0] space-y-2">
+        <p className="text-[10px] font-extrabold text-[#475569] uppercase tracking-wider">Suggested Questions:</p>
         <div className="flex flex-wrap gap-1.5">
           {quickPrompts.map((qp, i) => (
             <button
               key={i}
               onClick={() => setInput(qp)}
-              className="px-3 py-1.5 rounded-full bg-white hover:bg-[#F3EEEC] border border-[#5B443D]/15 text-[10px] font-bold text-[#111111] transition text-left cursor-pointer shadow-xs"
+              className="px-3 py-1.5 rounded-full bg-white hover:bg-slate-100 border border-[#E2E8F0] text-[10px] font-bold text-[#0F172A] transition text-left cursor-pointer shadow-xs"
             >
               {qp}
             </button>
@@ -159,18 +159,18 @@ export const AiChatAssistant: React.FC<AiChatAssistantProps> = ({ isOpen, onClos
       </div>
 
       {/* Input Box */}
-      <form onSubmit={handleSend} className="p-4 bg-white border-t border-[#5B443D]/10 flex items-center gap-2">
+      <form onSubmit={handleSend} className="p-4 bg-white border-t border-[#E2E8F0] flex items-center gap-2">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about website plans, SEO, timeline..."
-          className="flex-1 px-4 py-2.5 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-xs focus:border-[#F35A24] focus:bg-white focus:outline-none transition"
+          className="flex-1 px-4 py-2.5 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] text-xs focus:border-[#1D4ED8] focus:bg-white focus:outline-none transition"
         />
         <button
           type="submit"
           disabled={loading || !input.trim()}
-          className="p-2.5 bg-gradient-to-r from-[#F35A24] to-[#D86A43] hover:shadow-md disabled:opacity-40 text-white rounded-2xl shadow-xs transition cursor-pointer"
+          className="p-2.5 bg-[#1D4ED8] hover:bg-[#1E40AF] disabled:opacity-40 text-white rounded-2xl shadow-xs transition cursor-pointer"
         >
           <Send className="w-4 h-4" />
         </button>

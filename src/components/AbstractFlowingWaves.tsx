@@ -15,26 +15,26 @@ export const AbstractFlowingWaves: React.FC<AbstractFlowingWavesProps> = ({ clas
         preserveAspectRatio="xMinYMin slice"
       >
         <defs>
-          {/* Main Translucent Terracotta Wave Gradient */}
+          {/* Main Translucent Royal Blue Wave Gradient */}
           <linearGradient id="wave-terracotta-vivid" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#F35A24" stopOpacity="0.22" />
-            <stop offset="50%" stopColor="#D86A43" stopOpacity="0.12" />
-            <stop offset="85%" stopColor="#8B0E2D" stopOpacity="0.06" />
-            <stop offset="100%" stopColor="#5B443D" stopOpacity="0.0" />
+            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.18" />
+            <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.10" />
+            <stop offset="85%" stopColor="#1D4ED8" stopOpacity="0.05" />
+            <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.0" />
           </linearGradient>
 
-          {/* Secondary Crimson Ribbon Gradient */}
+          {/* Secondary Ribbon Gradient */}
           <linearGradient id="wave-crimson-vivid" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#8B0E2D" stopOpacity="0.20" />
-            <stop offset="50%" stopColor="#D86A43" stopOpacity="0.10" />
-            <stop offset="100%" stopColor="#F35A24" stopOpacity="0.0" />
+            <stop offset="0%" stopColor="#1D4ED8" stopOpacity="0.15" />
+            <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="#2563EB" stopOpacity="0.0" />
           </linearGradient>
 
-          {/* Soft Mocha Ribbon Gradient */}
+          {/* Soft Ribbon Gradient */}
           <linearGradient id="wave-mocha-vivid" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0%" stopColor="#D86A43" stopOpacity="0.20" />
-            <stop offset="40%" stopColor="#F35A24" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#5B443D" stopOpacity="0.0" />
+            <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.15" />
+            <stop offset="40%" stopColor="#2563EB" stopOpacity="0.10" />
+            <stop offset="100%" stopColor="#1D4ED8" stopOpacity="0.0" />
           </linearGradient>
         </defs>
 
@@ -55,21 +55,21 @@ export const AbstractFlowingWaves: React.FC<AbstractFlowingWavesProps> = ({ clas
           {/* Fine Curved Vector Contour Lines */}
           <path
             d="M-30,10 C200,250 150,540 20,780 C-50,910 100,1060 300,1140"
-            stroke="#F35A24"
+            stroke="#2563EB"
             strokeWidth="1.8"
             strokeOpacity="0.30"
             fill="none"
           />
           <path
             d="M10,30 C240,280 190,570 60,810 C-10,940 140,1090 340,1170"
-            stroke="#D86A43"
+            stroke="#3B82F6"
             strokeWidth="1.5"
             strokeOpacity="0.25"
             fill="none"
           />
           <path
             d="M50,50 C270,310 220,600 100,840 C30,970 180,1120 380,1200"
-            stroke="#8B0E2D"
+            stroke="#1D4ED8"
             strokeWidth="1.2"
             strokeOpacity="0.20"
             fill="none"
@@ -85,14 +85,14 @@ export const AbstractFlowingWaves: React.FC<AbstractFlowingWavesProps> = ({ clas
 
           <path
             d="M-100,700 C300,620 720,780 1280,690 C1460,660 1580,740 1700,820"
-            stroke="#F35A24"
+            stroke="#2563EB"
             strokeWidth="1.8"
             strokeOpacity="0.25"
             fill="none"
           />
           <path
             d="M-80,730 C320,650 740,810 1300,720 C1480,690 1600,770 1720,850"
-            stroke="#D86A43"
+            stroke="#3B82F6"
             strokeWidth="1.2"
             strokeOpacity="0.20"
             fill="none"
@@ -107,7 +107,7 @@ export const AbstractFlowingWaves: React.FC<AbstractFlowingWavesProps> = ({ clas
           />
           <path
             d="M900,-100 C1080,110 1300,60 1500,190"
-            stroke="#F35A24"
+            stroke="#2563EB"
             strokeWidth="1.8"
             strokeOpacity="0.25"
             fill="none"

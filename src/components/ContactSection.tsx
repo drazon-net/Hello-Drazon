@@ -99,19 +99,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
   };
 
   return (
-    <section id={id} className="py-16 sm:py-24 relative scroll-mt-20 bg-[#F3EEEC] border-t border-[#5B443D]/10">
+    <section id={id} className="py-28 md:py-32 relative scroll-mt-20 bg-[#F8FAFC]/80 border-t border-[#E2E8F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#5B443D]/15 text-xs font-bold text-[#8B0E2D] uppercase tracking-wider shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#F35A24]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#E2E8F0] text-xs font-bold text-[#1D4ED8] uppercase tracking-wider shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#1D4ED8]" />
             <span>Project Enquiries</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#111111] tracking-tight">
-            Start Your Project With <span className="text-orange-gradient">Drazon</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0F172A] tracking-tight">
+            Start Your Project With <span className="text-blue-gradient">Drazon</span>
           </h2>
-          <p className="text-[#4A4A4A] text-base sm:text-lg leading-relaxed">
+          <p className="text-[#475569] text-base sm:text-lg leading-relaxed">
             Tell us about your goals, scope, and timeline. Our team will review your enquiry and provide a detailed response within 2 business hours.
           </p>
         </div>
@@ -120,23 +120,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
           
           {/* Left Column: Official Contact Email Display & AI CTA */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#5B443D]/10 space-y-6 shadow-sm">
-              <h3 className="text-2xl font-black text-[#111111]">Official Contact Info</h3>
-              <p className="text-[#4A4A4A] text-sm leading-relaxed">
+            <div className="bg-white rounded-[18px] p-6 sm:p-8 border border-[#E2E8F0] space-y-6 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
+              <h3 className="text-2xl font-black text-[#0F172A]">Official Contact Info</h3>
+              <p className="text-[#475569] text-sm leading-relaxed">
                 We provide fast, responsive communication for all project inquiries across New Zealand and worldwide.
               </p>
 
               <div className="space-y-4 pt-2">
                 {/* Official Contact Email Card */}
-                <div className="p-5 rounded-2xl bg-[#F9F0ED] border border-[#5B443D]/10 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-[#5B443D]/10 flex items-center justify-center text-[#F35A24] shrink-0 shadow-xs">
+                <div className="p-5 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#1D4ED8] shrink-0 shadow-xs">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div className="overflow-hidden">
-                    <p className="text-xs text-[#5B443D] font-extrabold uppercase tracking-wider">Official Email</p>
+                    <p className="text-xs text-[#475569] font-extrabold uppercase tracking-wider">Official Email</p>
                     <a
                       href="mailto:hello@drazon.cc.cd"
-                      className="text-base sm:text-lg font-black text-[#111111] hover:text-[#F35A24] transition-colors truncate block"
+                      className="text-base sm:text-lg font-black text-[#0F172A] hover:text-[#1D4ED8] transition-colors truncate block"
                     >
                       hello@drazon.cc.cd
                     </a>
@@ -145,17 +145,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
 
                 {/* Instant Proposal Card Trigger */}
                 {onOpenProposal && (
-                  <div className="p-6 rounded-2xl bg-[#F9F0ED] border border-[#F35A24]/20 space-y-3">
-                    <div className="flex items-center gap-2 text-xs font-extrabold text-[#8B0E2D] uppercase tracking-wider">
-                      <Sparkles className="w-4 h-4 text-[#F35A24]" />
+                  <div className="p-6 rounded-2xl bg-blue-50/60 border border-blue-200 space-y-3">
+                    <div className="flex items-center gap-2 text-xs font-extrabold text-[#1D4ED8] uppercase tracking-wider">
+                      <Sparkles className="w-4 h-4 text-[#1D4ED8]" />
                       <span>Instant AI Proposal</span>
                     </div>
-                    <p className="text-xs text-[#4A4A4A]">
+                    <p className="text-xs text-[#475569]">
                       Need an immediate scope breakdown, timeline, and cost structure?
                     </p>
                     <button
                       onClick={onOpenProposal}
-                      className="w-full py-3 px-4 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#F35A24] to-[#D86A43] hover:shadow-lg rounded-full shadow-md transition cursor-pointer"
+                      className="btn-primary w-full justify-center"
                     >
                       Generate Proposal in 30s
                     </button>
@@ -166,53 +166,53 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
             </div>
 
             {/* Response Guarantee Badge */}
-            <div className="p-4.5 rounded-2xl bg-white border border-[#5B443D]/10 flex items-center gap-3 text-xs text-[#5B443D] font-bold shadow-xs">
-              <ShieldCheck className="w-5 h-5 text-[#F35A24] shrink-0" />
+            <div className="p-4.5 rounded-2xl bg-white border border-[#E2E8F0] flex items-center gap-3 text-xs text-[#475569] font-bold shadow-xs">
+              <ShieldCheck className="w-5 h-5 text-[#1D4ED8] shrink-0" />
               <span>Guaranteed response within 2 business hours.</span>
             </div>
           </div>
 
           {/* Right Column: Upgraded Contact Form */}
           <div className="lg:col-span-8">
-            <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#5B443D]/10 shadow-lg relative">
+            <div className="bg-white rounded-[18px] p-6 sm:p-10 border border-[#E2E8F0] shadow-[0_10px_35px_rgba(15,23,42,0.06)] relative">
               
               {submitted ? (
                 <div className="text-center py-12 space-y-5 animate-in zoom-in-95 duration-300">
-                  <div className="w-16 h-16 rounded-full bg-[#F9F0ED] border border-[#5B443D]/10 text-[#F35A24] mx-auto flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-blue-50 border border-blue-200 text-[#1D4ED8] mx-auto flex items-center justify-center">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-black text-[#111111]">Enquiry Received!</h3>
-                  <p className="text-[#4A4A4A] text-sm max-w-lg mx-auto leading-relaxed">
-                    Thank you <span className="text-[#F35A24] font-bold">{formData.name}</span>! We have received your request for <span className="text-[#111111] font-bold">{formData.service}</span>. A confirmation has been sent to <span className="text-[#111111] font-bold">{formData.email}</span>.
+                  <h3 className="text-2xl font-black text-[#0F172A]">Enquiry Received!</h3>
+                  <p className="text-[#475569] text-sm max-w-lg mx-auto leading-relaxed">
+                    Thank you <span className="text-[#1D4ED8] font-bold">{formData.name}</span>! We have received your request for <span className="text-[#0F172A] font-bold">{formData.service}</span>. A confirmation has been sent to <span className="text-[#0F172A] font-bold">{formData.email}</span>.
                   </p>
 
-                  <div className="max-w-md mx-auto bg-[#F9F0ED] border border-[#5B443D]/10 p-5 rounded-2xl text-left text-xs space-y-2 text-[#4A4A4A]">
+                  <div className="max-w-md mx-auto bg-[#F8FAFC] border border-[#E2E8F0] p-5 rounded-2xl text-left text-xs space-y-2 text-[#475569]">
                     <p><strong>Service:</strong> {formData.service}</p>
                     <p><strong>Estimated Budget:</strong> {formData.budget}</p>
                     <p><strong>Preferred Timeline:</strong> {formData.timeline}</p>
                     {formData.company && <p><strong>Company:</strong> {formData.company}</p>}
                   </div>
 
-                  <p className="text-xs text-[#5B443D]">
-                    Official Contact Email: <span className="text-[#F35A24] font-bold">hello@drazon.cc.cd</span>
+                  <p className="text-xs text-[#475569]">
+                    Official Contact Email: <span className="text-[#1D4ED8] font-bold">hello@drazon.cc.cd</span>
                   </p>
 
                   <button
                     onClick={handleResetForm}
-                    className="mt-4 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#111111] bg-[#F9F0ED] hover:bg-[#F3EEEC] rounded-full border border-[#5B443D]/15 transition cursor-pointer"
+                    className="btn-secondary mt-4"
                   >
                     Submit Another Enquiry
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="border-b border-[#5B443D]/10 pb-4">
-                    <h3 className="text-2xl font-black text-[#111111]">Submit A Project Enquiry</h3>
-                    <p className="text-xs text-[#5B443D] mt-1 font-medium">Fill in the details below so we can accurately evaluate your project needs.</p>
+                  <div className="border-b border-[#E2E8F0] pb-4">
+                    <h3 className="text-2xl font-black text-[#0F172A]">Submit A Project Enquiry</h3>
+                    <p className="text-xs text-[#475569] mt-1 font-medium">Fill in the details below so we can accurately evaluate your project needs.</p>
                   </div>
 
                   {errorMessage && (
-                    <div className="p-4 rounded-2xl bg-[#8B0E2D]/10 border border-[#8B0E2D]/20 text-[#8B0E2D] text-xs font-bold leading-relaxed animate-in fade-in duration-200">
+                    <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-600 text-xs font-bold leading-relaxed animate-in fade-in duration-200">
                       {errorMessage}
                     </div>
                   )}
@@ -221,8 +221,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Full Name */}
                     <div>
-                      <label className="block text-xs font-bold text-[#111111] mb-1.5 flex items-center gap-1.5">
-                        <User className="w-3.5 h-3.5 text-[#5B443D]" />
+                      <label className="block text-xs font-bold text-[#0F172A] mb-1.5 flex items-center gap-1.5">
+                        <User className="w-3.5 h-3.5 text-[#475569]" />
                         <span>Full Name *</span>
                       </label>
                       <input
@@ -231,14 +231,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-sm focus:border-[#F35A24] focus:bg-white focus:outline-none transition"
+                        className="w-full px-4 py-3 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] text-sm focus:border-[#1D4ED8] focus:bg-white focus:outline-none transition"
                       />
                     </div>
 
                     {/* Email Address */}
                     <div>
-                      <label className="block text-xs font-bold text-[#111111] mb-1.5 flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-[#5B443D]" />
+                      <label className="block text-xs font-bold text-[#0F172A] mb-1.5 flex items-center gap-1.5">
+                        <Mail className="w-3.5 h-3.5 text-[#475569]" />
                         <span>Email Address *</span>
                       </label>
                       <input
@@ -247,7 +247,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@company.com"
-                        className="w-full px-4 py-3 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-sm focus:border-[#F35A24] focus:bg-white focus:outline-none transition"
+                        className="w-full px-4 py-3 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] text-sm focus:border-[#1D4ED8] focus:bg-white focus:outline-none transition"
                       />
                     </div>
                   </div>
@@ -256,31 +256,31 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Company Name (Optional) */}
                     <div>
-                      <label className="block text-xs font-bold text-[#111111] mb-1.5 flex items-center gap-1.5">
-                        <Building2 className="w-3.5 h-3.5 text-[#5B443D]" />
-                        <span>Company Name <span className="text-[#5B443D] font-normal">(Optional)</span></span>
+                      <label className="block text-xs font-bold text-[#0F172A] mb-1.5 flex items-center gap-1.5">
+                        <Building2 className="w-3.5 h-3.5 text-[#475569]" />
+                        <span>Company Name <span className="text-[#475569] font-normal">(Optional)</span></span>
                       </label>
                       <input
                         type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="Acme Inc."
-                        className="w-full px-4 py-3 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-sm focus:border-[#F35A24] focus:bg-white focus:outline-none transition"
+                        className="w-full px-4 py-3 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] text-sm focus:border-[#1D4ED8] focus:bg-white focus:outline-none transition"
                       />
                     </div>
 
                     {/* Business Website (Optional) */}
                     <div>
-                      <label className="block text-xs font-bold text-[#111111] mb-1.5 flex items-center gap-1.5">
-                        <Globe className="w-3.5 h-3.5 text-[#5B443D]" />
-                        <span>Business Website <span className="text-[#5B443D] font-normal">(Optional)</span></span>
+                      <label className="block text-xs font-bold text-[#0F172A] mb-1.5 flex items-center gap-1.5">
+                        <Globe className="w-3.5 h-3.5 text-[#475569]" />
+                        <span>Business Website <span className="text-[#475569] font-normal">(Optional)</span></span>
                       </label>
                       <input
                         type="text"
                         value={formData.website}
                         onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                         placeholder="www.example.com"
-                        className="w-full px-4 py-3 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-sm focus:border-[#F35A24] focus:bg-white focus:outline-none transition"
+                        className="w-full px-4 py-3 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] text-sm focus:border-[#1D4ED8] focus:bg-white focus:outline-none transition"
                       />
                     </div>
                   </div>
@@ -289,14 +289,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Service Required */}
                     <div>
-                      <label className="block text-xs font-bold text-[#111111] mb-1.5 flex items-center gap-1.5">
-                        <Sparkles className="w-3.5 h-3.5 text-[#5B443D]" />
+                      <label className="block text-xs font-bold text-[#0F172A] mb-1.5 flex items-center gap-1.5">
+                        <Sparkles className="w-3.5 h-3.5 text-[#475569]" />
                         <span>Service Required *</span>
                       </label>
                       <select
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full px-4 py-3 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-sm focus:border-[#F35A24] focus:bg-white focus:outline-none transition"
+                        className="w-full px-4 py-3 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] text-sm focus:border-[#1D4ED8] focus:bg-white focus:outline-none transition"
                       >
                         <option value="Website Development">Website Development</option>
                         <option value="UI/UX Design">UI/UX Design</option>
@@ -308,14 +308,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
 
                     {/* Estimated Budget */}
                     <div>
-                      <label className="block text-xs font-bold text-[#111111] mb-1.5 flex items-center gap-1.5">
-                        <DollarSign className="w-3.5 h-3.5 text-[#5B443D]" />
+                      <label className="block text-xs font-bold text-[#0F172A] mb-1.5 flex items-center gap-1.5">
+                        <DollarSign className="w-3.5 h-3.5 text-[#475569]" />
                         <span>Estimated Budget *</span>
                       </label>
                       <select
                         value={formData.budget}
                         onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                        className="w-full px-4 py-3 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-sm focus:border-[#F35A24] focus:bg-white focus:outline-none transition"
+                        className="w-full px-4 py-3 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] text-sm focus:border-[#1D4ED8] focus:bg-white focus:outline-none transition"
                       >
                         <option value="Under NZ$500">Under NZ$500</option>
                         <option value="NZ$500–1,000">NZ$500–1,000</option>
@@ -327,8 +327,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
 
                   {/* Preferred Timeline */}
                   <div>
-                    <label className="block text-xs font-bold text-[#111111] mb-1.5 flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#5B443D]" />
+                    <label className="block text-xs font-bold text-[#0F172A] mb-1.5 flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-[#475569]" />
                       <span>Preferred Timeline *</span>
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -341,8 +341,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                             onClick={() => setFormData({ ...formData, timeline: timeOption })}
                             className={`py-3 px-3 rounded-2xl border text-xs font-bold transition cursor-pointer text-center ${
                               isSelected
-                                ? 'bg-gradient-to-r from-[#F35A24] to-[#D86A43] border-transparent text-white shadow-xs'
-                                : 'bg-[#F9F0ED]/60 border-[#5B443D]/15 text-[#4A4A4A] hover:bg-[#F3EEEC]'
+                                ? 'bg-[#1D4ED8] border-transparent text-white shadow-xs'
+                                : 'bg-[#F8FAFC] border-[#E2E8F0] text-[#475569] hover:bg-slate-100'
                             }`}
                           >
                             {timeOption}
@@ -354,8 +354,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
 
                   {/* Project Details */}
                   <div>
-                    <label className="block text-xs font-bold text-[#111111] mb-1.5 flex items-center gap-1.5">
-                      <FileText className="w-3.5 h-3.5 text-[#5B443D]" />
+                    <label className="block text-xs font-bold text-[#0F172A] mb-1.5 flex items-center gap-1.5">
+                      <FileText className="w-3.5 h-3.5 text-[#475569]" />
                       <span>Project Details *</span>
                     </label>
                     <textarea
@@ -364,7 +364,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Describe your project goals, key feature needs, or specific questions..."
-                      className="w-full px-4 py-3 rounded-2xl bg-[#F9F0ED]/60 border border-[#5B443D]/15 text-[#111111] text-sm focus:border-[#F35A24] focus:bg-white focus:outline-none transition resize-none"
+                      className="w-full px-4 py-3 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] text-sm focus:border-[#1D4ED8] focus:bg-white focus:outline-none transition resize-none"
                     />
                   </div>
 
@@ -372,7 +372,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenProposal, 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 px-6 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#F35A24] to-[#D86A43] hover:shadow-lg rounded-full shadow-md transition duration-200 cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="btn-primary w-full justify-center disabled:opacity-50"
                   >
                     {loading ? (
                       <span>Sending Project Enquiry...</span>
